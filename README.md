@@ -1,5 +1,12 @@
 # README
 
+## Note
+Right now this project is not meant to be used since it is vulnerable to script injection. 
+So do not use it as it is yet.
+
+To use it you have to have ddcutil installed on your system. I only tested it on fedora 40.
+
+
 ## About
 
 This is the official Wails Vue-TS template.
