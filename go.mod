@@ -1,4 +1,4 @@
-module myproject
+module extmbr
 
 go 1.21
 

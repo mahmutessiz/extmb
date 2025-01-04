@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import {reactive, ref, computed} from 'vue'
+import {reactive} from 'vue'
 import {RunScript, RunScriptIncrement} from '../../wailsjs/go/main/App'
 
 const data = reactive({
-  name: '90',
+  name: '50',
 })
 
 let script= `
@@ -20,13 +20,26 @@ const scriptDecrease=`
 <template>
   <main>
     <div id="input" class="input-box">
-      <p class="result">Current brightness: {{ data.name }}%, {{ script }}</p>
-      <input id="name" v-model="data.name" autocomplete="off" class="input" type="text"/>
-      <button class="btn" style="width: 200px;" @click="RunScript(scriptDecrease)">10%</button>
-      <button class="btn" style="width: 200px;" @click="()=>{
+      <p>Brightness: {{ data.name }}%</p>
+      <input
+       type="range"
+       min="0"
+       max="100" v-model="data.name"
+       style="
+          width: 90%;
+          cursor: pointer;
+          margin-bottom: 24px;
+       
+       "
+      >
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;">
+       <button class="btn" style="width: 150px; text-align: center;" @click="RunScript(scriptDecrease)">10%</button>
+       <button class="btn" style="width: 150px; text-align: center;" @click="()=>{
         const script1 = script + data.name
         RunScriptIncrement(script1)
-      }">Apply</button>
+      }">Apply</button> 
+      </div>
+      
     </div>
   </main>
 </template>
