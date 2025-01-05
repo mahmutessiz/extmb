@@ -5,14 +5,16 @@
 
 This is a simple GUI application that let you control yor external monitor brightness. It uses ddcutil to adjust brightness.
 
+## Important
+This app won't work on laptops. It's meant to be used with an external monitor.
+
 
 ![Screenshot of the main window](public/1.png)
 
 
 
-## About
+### About
 
-This is the official Wails Vue-TS template.
 
 You can configure the project by editing `wails.json`. More information about the project settings can be found
 here: https://wails.io/docs/reference/project-config
