@@ -33,8 +33,12 @@ const scriptDecrease=`
        "
       >
       <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;">
-       <button class="btn" style="width: 150px; text-align: center;" @click="RunScript(scriptDecrease)">10%</button>
        <button class="btn" style="width: 150px; text-align: center;" @click="()=>{
+         data.name = '10';
+         RunScript(scriptDecrease)
+       }">10%</button>
+       <button class="btn" style="width: 150px; text-align: center;"
+        @click="()=>{
         const script1 = script + data.name
         RunScriptIncrement(script1)
       }">Apply</button> 
